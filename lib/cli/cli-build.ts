@@ -7,10 +7,10 @@ import path from 'path';
 const rootDir = process.cwd();
 
 const c = glob
-	.sync(`${rootDir}/src/_standalone/**/embed.{js,ts}`) // Matches both .js and .ts
+	.sync(`${rootDir}/web/svelte/**/embed.{js,ts}`) // Matches both .js and .ts
 	.map((file) => {
 		const normalizedPath = path.normalize(file);
-		const match = normalizedPath.match(/src[\\/]_standalone[\\/](.*?)[\\/]embed\.(js|ts)/);
+		const match = normalizedPath.match(/web[\\/]svelte[\\/](.*?)[\\/]embed\.(js|ts)/);
 		return match ? { name: match[1], value: file, checked: true } : null;
 	})
 	.filter(Boolean) as {

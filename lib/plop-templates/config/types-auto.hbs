@@ -1,6 +1,6 @@
 import {{capitalizeName}} from './index.svelte';
 
-import type { TargetEmbeddedWindow } from 'svelte-standalone';
+import type { TargetEmbeddedWindow } from 'svelte-standalone-go';
 
 declare global {
 	interface Window extends TargetEmbeddedWindow<typeof {{capitalizeName}}, "{{componentName}}"> {}

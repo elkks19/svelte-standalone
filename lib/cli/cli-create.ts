@@ -4,7 +4,7 @@ import { input, select } from '@inquirer/prompts';
 import { create } from './methods/create.js';
 
 const dynamicPaths = [`runtime`, `+runtime`, `$runtime`].map(
-	(suffix) => `${rootDir}/src/_standalone/${suffix}/index.svelte`
+	(suffix) => `${rootDir}/web/svelte/${suffix}/index.svelte`
 );
 
 const embeddableName = {
@@ -32,7 +32,7 @@ const embeddableName = {
 			return false;
 		}
 
-		const componentPath = `${rootDir}/src/_standalone/${input}/index.svelte`;
+		const componentPath = `${rootDir}/web/svelte/${input}/index.svelte`;
 		if (fs.existsSync(componentPath)) {
 			console.error(`Invalid name. "${input}" already exists.`);
 			return false;

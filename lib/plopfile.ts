@@ -8,7 +8,7 @@ export default function (plop: NodePlopAPI) {
 		actions: [
 			{
 				type: 'add',
-				path: path.join(rootDir, 'src/stories/{{componentName}}.stories.ts'),
+				path: path.join(rootDir, 'web/svelte/{{componentName}}.stories.ts'),
 				templateFile: path.join(moduleDir, 'lib/plop-templates/story/{{strategy}}.hbs')
 			}
 		]
@@ -19,7 +19,7 @@ export default function (plop: NodePlopAPI) {
 		actions: [
 			{
 				type: 'add',
-				path: path.join(rootDir, 'src/_standalone/{{componentName}}/embed.ts'),
+				path: path.join(rootDir, 'web/svelte/{{componentName}}/embed.ts'),
 				templateFile: path.join(moduleDir, 'lib/plop-templates/embed.hbs')
 			}
 		]
@@ -30,7 +30,7 @@ export default function (plop: NodePlopAPI) {
 		actions: [
 			{
 				type: 'add',
-				path: path.join(rootDir, 'src/_standalone/{{componentName}}/config.ts'),
+				path: path.join(rootDir, 'web/svelte/{{componentName}}/config.ts'),
 				templateFile: path.join(moduleDir, 'lib/plop-templates/config/{{strategy}}.hbs')
 			}
 		]
@@ -41,7 +41,7 @@ export default function (plop: NodePlopAPI) {
 		actions: [
 			{
 				type: 'add',
-				path: path.join(rootDir, 'src/routes/{{componentName}}/+page.svelte'),
+				path: path.join(rootDir, 'web/svelte/{{componentName}}/+page.svelte'),
 				templateFile: path.join(moduleDir, 'lib/plop-templates/route/{{strategy}}.hbs')
 			}
 		]
@@ -52,7 +52,7 @@ export default function (plop: NodePlopAPI) {
 		actions: [
 			{
 				type: 'add',
-				path: path.join(rootDir, 'src/routes/+layout.svelte'),
+				path: path.join(rootDir, 'web/svelte/+layout.svelte'),
 				templateFile: path.join(moduleDir, 'lib/plop-templates/route/layout.hbs')
 			}
 		]
@@ -63,7 +63,7 @@ export default function (plop: NodePlopAPI) {
 		actions: [
 			{
 				type: 'add',
-				path: path.join(rootDir, 'src/_standalone/{{componentName}}/index.svelte'),
+				path: path.join(rootDir, 'web/svelte/{{componentName}}/index.svelte'),
 				templateFile: path.join(moduleDir, 'lib/plop-templates/structure/component.hbs')
 			}
 		]

@@ -1,7 +1,7 @@
 {
-	"name": "svelte-standalone",
-	"version": "2.1.1",
-	"description": "Transform Svelte components in standalone scripts!",
+	"name": "svelte-standalone-go",
+	"version": "0.0.4",
+	"description": "a fork of svelte-standalone that I'll use for a go project",
 	"bin": {
 		"standalone": "dist/cli/cli.js"
 	},
@@ -53,20 +53,9 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/brenoliradev/svelte-standalone.git"
+		"url": "git+https://github.com/elkks19/svelte-standalone"
 	},
-	"keywords": [
-		"svelte",
-		"scripts",
-		"standalone",
-		"tailwind",
-		"typescript"
-	],
-	"author": "brenoliradev",
+	"author": "elkks",
 	"license": "MIT",
-	"bugs": {
-		"url": "https://github.com/brenoliradev/svelte-standalone/issues"
-	},
-	"homepage": "https://svelte-standalone.vercel.app/",
 	"type": "module"
 }

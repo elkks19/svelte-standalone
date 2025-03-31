@@ -4,7 +4,6 @@ import fs from 'fs';
 import tailwindcss from '@tailwindcss/vite';
 
 import path from 'path';
-import { visualizer } from 'rollup-plugin-visualizer';
 import resolve from '@rollup/plugin-node-resolve';
 import { svelte } from '@sveltejs/vite-plugin-svelte';
 import cssnanoPlugin from 'cssnano';
@@ -101,17 +100,13 @@ const getProd = (prod: boolean) =>
 			]
 		: [];
 
-const commonPlugins = (componentName: string, visualizerDir: string) =>
+const commonPlugins = (componentName: string) =>
 	[
 		svelte({
 			configFile: svelteConfig,
 			compilerOptions: {
 				cssHash: ({ name }) => `s-${name?.toLowerCase()}`
 			}
-		}),
-		visualizer({
-			filename: `${visualizerDir}.status.html`,
-			title: `${componentName} status`
 		}),
 		libInjectCss(),
 		tailwind && tailwindcss()
@@ -126,10 +121,6 @@ const handleBuild = (
 	return files.map((file) => {
 		const rawComponentName = path.dirname(file).split(path.sep).at(-1) || '';
 		const componentName = normalizeComponentName(rawComponentName);
-		const visualizerDir = path
-			.dirname(file)
-			.replace('src', 'static')
-			.replace('_standalone', `dist${path.sep}visualizer`);
 		const purgeDir = path.dirname(file).replace('embed.ts', '');
 
 		if (!componentName) {
@@ -143,7 +134,7 @@ const handleBuild = (
 					plugins: getPostCSSPlugins(purgeDir, rawComponentName, hasRuntime)
 				}
 			},
-			plugins: commonPlugins(componentName, visualizerDir),
+			plugins: commonPlugins(componentName),
 			build: {
 				minify: prod,
 				emptyOutDir: false,
@@ -153,12 +144,12 @@ const handleBuild = (
 					name: componentName,
 					fileName: componentName
 				},
-				outDir: path.resolve(rootDir, 'static/dist/standalone'),
+				outDir: path.resolve(rootDir, 'web/components'),
 				rollupOptions: {
 					output: {
 						chunkFileNames: 'chunks/[name].[hash].js',
 						assetFileNames: 'assets/[name][extname]',
-						entryFileNames: `${componentName}.min.js`
+						entryFileNames: `${componentName}.js`
 					},
 					plugins: [resolve({ browser: true, dedupe: ['svelte'] }), ...getProd(prod)]
 				}

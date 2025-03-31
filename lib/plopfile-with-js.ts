@@ -8,7 +8,7 @@ export default function (plop: NodePlopAPI) {
 		actions: [
 			{
 				type: 'add',
-				path: path.resolve(rootDir, 'src/stories/{{componentName}}.stories.js'),
+				path: path.resolve(rootDir, 'web/components/{{componentName}}.stories.js'),
 				templateFile: path.resolve(moduleDir, 'lib/plop-templates/story/{{strategy}}.hbs')
 			}
 		]
@@ -19,7 +19,7 @@ export default function (plop: NodePlopAPI) {
 		actions: [
 			{
 				type: 'add',
-				path: path.resolve(rootDir, 'src/_standalone/{{componentName}}/embed.js'),
+				path: path.resolve(rootDir, 'web/components/{{componentName}}/embed.js'),
 				templateFile: path.resolve(moduleDir, 'lib/plop-templates/embed/{{strategy}}.hbs')
 			}
 		]
@@ -30,7 +30,7 @@ export default function (plop: NodePlopAPI) {
 		actions: [
 			{
 				type: 'add',
-				path: path.resolve(rootDir, 'src/_standalone/{{componentName}}/config.js'),
+				path: path.resolve(rootDir, 'web/components/{{componentName}}/config.js'),
 				templateFile: path.resolve(moduleDir, 'lib/plop-templates/config/{{strategy}}.hbs')
 			}
 		]
@@ -41,7 +41,7 @@ export default function (plop: NodePlopAPI) {
 		actions: [
 			{
 				type: 'add',
-				path: path.resolve(rootDir, 'src/routes/{{componentName}}/+page.svelte'),
+				path: path.resolve(rootDir, 'web/components/{{componentName}}/+page.svelte'),
 				templateFile: path.resolve(moduleDir, 'lib/plop-templates/route/{{strategy}}.hbs')
 			}
 		]
@@ -52,7 +52,7 @@ export default function (plop: NodePlopAPI) {
 		actions: [
 			{
 				type: 'add',
-				path: path.resolve(rootDir, 'src/routes/+layout.svelte'),
+				path: path.resolve(rootDir, 'web/components/+layout.svelte'),
 				templateFile: path.resolve(moduleDir, 'lib/plop-templates/route/layout.hbs')
 			}
 		]
@@ -63,7 +63,7 @@ export default function (plop: NodePlopAPI) {
 		actions: [
 			{
 				type: 'add',
-				path: path.resolve(rootDir, 'src/_standalone/{{componentName}}/index.svelte'),
+				path: path.resolve(rootDir, 'web/components/{{componentName}}/index.svelte'),
 				templateFile: path.resolve(moduleDir, 'lib/plop-templates/structure/component.hbs')
 			}
 		]
